@@ -4,4 +4,12 @@ ln:33 - scale() does not multiply but adds factor to radius.
 
 -----------------------------------------------------------------------------------------------------------------------
 
+Circle1.java
 
+ln:10-16 - intersects() does not properly check if circles are intesecting. False positives.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Circle2.java
+
+ln16 - intersects() does not properly check if circles are intersecting. False positives.

@@ -53,7 +53,7 @@ public Point moveBy(double xOffset, double yOffset)
 * @return True if the circles' outer edges intersect
 *         at all, False otherwise
 **/
-public abstract boolean intersects(Circle first, Circle other);
+public abstract boolean intersects(Circle other);
 
 }
 

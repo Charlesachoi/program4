@@ -1,10 +1,10 @@
 
 /***
-* Example JUnit testing class for Circle1 (and Circle)
+* Example JUnit testing class for Circle2 (and Circle)
 *
 * - must have your classpath set to include the JUnit jarfiles
 * - to run the test do:
-*     java org.junit.runner.JUnitCore Circle1Test
+*     java org.junit.runner.JUnitCore Circle2Test
 * - note that the commented out main is another way to run tests
 * - note that normally you would not have print statements in
 *   a JUnit testing class; they are here just so you see what is
@@ -13,10 +13,10 @@
 
 import org.junit.*;
 
-public class Circle1Test
+public class Circle2Test
 {
    // Data you need for each test case
-   private Circle1 circle1, circle2, circle3;
+   private Circle2 circle1, circle2, circle3;
 
 // 
 // Stuff you want to do before each test case
@@ -25,7 +25,7 @@ public class Circle1Test
 public void setup()
 {
    System.out.println("\nTest starting...");
-   circle1 = new Circle1(1,2,3);
+   circle1 = new Circle2(1,2,3);
 }
 
 //
@@ -46,7 +46,7 @@ public void simpleMove()
    Point p;
    System.out.println("\nRunning test simpleMove.");
    p = circle1.moveBy(1,1);
-   Assert.assertTrue(p.x == 2 && p.y == 3);
+   Assert.assertTrue(p.x == 3 && p.y == 2);
 }
 
 // 
@@ -58,7 +58,7 @@ public void simpleMoveNeg()
    Point p;
    System.out.println("\nRunning test simpleMoveNeg.");
    p = circle1.moveBy(-1,-1);
-   Assert.assertTrue(p.x == 0 && p.y == 1);
+   Assert.assertTrue(p.x == 1 && p.y == 0);
 }
 
 // 
@@ -80,7 +80,7 @@ public void changeSize()
 public void intersection()
 {
    boolean intest;
-   circle2 = new Circle1(1,2,3);
+   circle2 = new Circle2(1,2,3);
    System.out.println("\nRunning test intersection.");
    intest = circle1.intersects(circle2);
    Assert.assertTrue(intest == true);
@@ -93,8 +93,8 @@ public void intersection()
 public void intersection2()
 {
    boolean intest;
-   circle2 = new Circle1(2,0,1);
-   circle3 = new Circle1(6,0,2);
+   circle2 = new Circle2(2,0,1);
+   circle3 = new Circle2(6,0,2);
    System.out.println("\nRunning test intersection.");
    intest = circle2.intersects(circle3);
    Assert.assertTrue(intest == false);
