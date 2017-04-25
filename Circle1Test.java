@@ -16,7 +16,7 @@ import org.junit.*;
 public class Circle1Test
 {
    // Data you need for each test case
-   private Circle1 circle1;
+   private Circle1 circle1, circle2;
 
 // 
 // Stuff you want to do before each test case
@@ -44,7 +44,7 @@ public void teardown()
 public void simpleMove()
 {
    Point p;
-   System.out.println("Running test simpleMove.");
+   System.out.println("\nRunning test simpleMove.");
    p = circle1.moveBy(1,1);
    Assert.assertTrue(p.x == 2 && p.y == 3);
 }
@@ -56,12 +56,37 @@ public void simpleMove()
 public void simpleMoveNeg()
 {
    Point p;
-   System.out.println("Running test simpleMoveNeg.");
+   System.out.println("\nRunning test simpleMoveNeg.");
    p = circle1.moveBy(-1,-1);
    Assert.assertTrue(p.x == 0 && p.y == 1);
 }
 
+// 
+// Test a size change
+//
+@Test
+public void changeSize()
+{
+   double rad;
+   System.out.println("\nRunning test changeSize.");
+   rad = circle1.scale(2.0);
+   Assert.assertTrue(rad == 6.0);
+}
 
+// 
+// Test a intersection
+//
+@Test
+public void intersection()
+{
+   boolean intest;
+   circle2 = new Circle1(1,2,3);
+   System.out.println("\nRunning test intersection.");
+   intest = circle1.intersects(circle2);
+   Assert.assertTrue(intest == true);
+}
+
+/**
 public static void main(String args[])
 {
    try {
@@ -71,6 +96,6 @@ public static void main(String args[])
       System.out.println("Exception: " + e);
    }
 }
-
+**/
 }
 
